@@ -16,11 +16,11 @@
 
         $sql = "INSERT INTO Zawody_wedkarskie(Karty_wedkarskie_id, Lowisko_id, data_zawodow, sedzia) VALUES ('$karty_wedkarskie', '$lowisko', '$data', '$sedzia')";
 
-        if ($conn->query($sql) === FALSE) {
-            echo "Błąd: " . $sql . $conn->error;
+        if ($con->query($sql) === FALSE) {
+            echo "Błąd: " . $sql . $con->error;
         }
 
-        $conn->close();
+        $con->close();
     }
 
 ?>
