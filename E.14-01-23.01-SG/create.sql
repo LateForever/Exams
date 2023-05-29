@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS `wedkowanie`;
+DROP DATABASE IF EXISTS `wedkarstwo`;
 
-CREATE DATABASE `wedkowanie`;
+CREATE DATABASE `wedkarstwo`;
 
-USE `wedkowanie`;
+USE `wedkarstwo`;
 
 CREATE TABLE Lowisko (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
