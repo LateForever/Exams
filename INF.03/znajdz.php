@@ -60,7 +60,6 @@
                                     $ulica = $row["ulica"];
 
                                     echo "<h3> . $nazwa . "," . $ulica . </h3>";
-
                                 }
                             }
 
