@@ -30,8 +30,7 @@ VALUES
 ('moskwa.png', 'podpis zdjęcia z moskwy'),
 ('praga.png', 'podpis zdjęcia z pragi'),
 ('warszawa.png', 'podpis zdjęcia z warszawy'),
-('wieden.png', 'podpis zdjęcia z wiednia'),
-('watykan.png', 'podpis zdjęcia z watykanu');
+('wieden.png', 'podpis zdjęcia z wiednia');
 
 INSERT INTO wycieczki(zdjecia_id, dataWyjazdu, cel, cena, dostepna) 
 VALUES 
@@ -43,5 +42,4 @@ VALUES
 (6, '12-05-2021', 'Pozwiedzać moskwa', 659.20, 1),
 (7, '12-05-2021', 'Pozwiedzać praga', 659.20, 0),
 (8, '12-05-2021', 'Pozwiedzać warszawa', 659.20, 0),
-(9, '12-05-2021', 'Pozwiedzać wieden', 659.20, 0),
-(10, '12-05-2021', 'Pozwiedzać watykan', 659.20, 0);
+(9, '12-05-2021', 'Pozwiedzać wieden', 659.20, 0);
