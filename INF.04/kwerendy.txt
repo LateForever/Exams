@@ -1,0 +1,14 @@
+SELECT id, nazwa FROM RodzajObiektu;
+
+SELECT id, nazwa FROM RodzajObiektu
+WHERE id = 2;
+
+SELECT id, nazwa FROM ObiektSportowy;
+
+SELECT os.id, os.nazwa, os.adres, os.godzinyOtwarcia, os.obrazek, ro.nazwa AS obiekt FROM ObiektSportowy AS os
+INNER JOIN RodzajObiektu AS ro ON ro.id = os.rodzajObiektu
+WHERE os.id = 3;
+
+INSERT INTO ObiektSportowy(nazwa, adres, rodzajObiektu, godzinyOtwarcia, obrazek)
+VALUES ('Vizja Park', 'ul. Okopowa 59, 01-043 Warszawa', 4, '07:00-22:30', 'default.jpeg');
+
