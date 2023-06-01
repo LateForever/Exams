@@ -6,21 +6,21 @@
         <title>Obiekty sportowe</title>
     </head>
     <body>
-        <head>
+        <haeder>
             <nav>
                 <ul>
                     <li>
-                        <a>Strona główna</a>
+                        <a href="./index.php">Strona główna</a>
                     </li>
                     <li>
-                        <a>O nas</a>
+                        <a href="./index.php">O nas</a>
                     </li>
                     <li>
-                        <a>Kontakt</a>
+                        <a href="./index.php">Kontakt</a>
                     </li>
                 </ul>
             </nav>
-        </head>
+        </haeder>
         <main>
             <div>
                 <ul>
