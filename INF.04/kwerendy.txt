@@ -12,3 +12,10 @@ WHERE os.id = 3;
 INSERT INTO ObiektSportowy(nazwa, adres, rodzajObiektu, godzinyOtwarcia, obrazek)
 VALUES ('Vizja Park', 'ul. Okopowa 59, 01-043 Warszawa', 4, '07:00-22:30', 'default.jpeg');
 
+SELECT os.nazwa, r.czasRozpoczecia, r.czasZakonczenia, r.obiektSportowy, u.email FROM ObiektSportowy AS os
+INNER JOIN Rezerwacja AS r ON r.obiektSportowy = os.id
+INNER JOIN Uzytkownik AS u ON u.id = r.uzytkownik
+WHERE r.czyPotwierdzona = 1;
+
+ALTER TABLE Rezerwacja
+ADD COLUMN czyPotwierdzona BOOLEAN NOT NULL DEFAULT 1;
