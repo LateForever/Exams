@@ -37,10 +37,11 @@
                     if($result->num_rows > 0) {
                         
                         while($res = $result->fetch_assoc()) {
+
                             $id = $res["id"];
                             $name = $res["nazwa"];
 
-                            echo "<li><a href='/index.php?=. $id .'>. $name .</a></li>";
+                            echo "<li><a href='/index.php?=$id' target='_self'>$name</a></li>";
                         }
                     }
 
@@ -48,7 +49,9 @@
                 ?>
                 </ul>
             </div>
-            <div></div>
+            <div>
+
+            </div>
             <div></div>
         </main>
         <footer>

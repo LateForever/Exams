@@ -37,12 +37,10 @@ CREATE TABLE Rezerwacja (
     FOREIGN KEY (uzytkownik) REFERENCES Uzytkownik(id)
 );
 
-
 INSERT INTO RodzajObiektu (nazwa) VALUES ("Stadion narodowy");
 INSERT INTO RodzajObiektu (nazwa) VALUES ("Stadion");
 INSERT INTO RodzajObiektu (nazwa) VALUES ("Orlik");
 INSERT INTO RodzajObiektu (nazwa) VALUES ("Hala sportowa");
-
 
 INSERT INTO ObiektSportowy (nazwa, adres, rodzajObiektu, godzinyOtwarcia, obrazek) VALUES ("Stadion Łazienkowski", "ul. Łazienkowska 3, Warszawa", 2, "8:00-20:00", "stadion.jpeg");
 INSERT INTO ObiektSportowy (nazwa, adres, rodzajObiektu, godzinyOtwarcia, obrazek) VALUES ("Camp Nou", "Camp Nou, C. d'Arístides Maillol, 12, 08028 Barcelona, Hiszpania", 2, "7:00-22:00", "camp.jpeg");
