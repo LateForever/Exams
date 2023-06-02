@@ -22,7 +22,7 @@
             </nav>
         </haeder>
         <main>
-            <div>
+            <div class="main-left">
                 <ul>
                 <?php
                     $con = new mysqli("localhost", "root", "", "Sport");
@@ -49,10 +49,44 @@
                 ?>
                 </ul>
             </div>
-            <div>
-
+            <div class="main-middle">
             </div>
-            <div></div>
+            <div class="main-right">
+                <h2>Dodaj nowy obiekt</h2>
+                <form method="POST">
+                    
+                </form>
+                <?php
+
+                    if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+                        $object_name = $_POST["nazwa"];
+                        $object_address = $_POST["adres"];
+                        $object_type = $_POST["rodzaj"];
+                        $object_hours = $_POST["godziny"];
+                        $_object_image = "default.jpeg";
+                        
+                        $con = new mysqli("localhost", "root", "", "Sport");
+
+                        if($con->connect_error) {
+                            die("Mysql connection error" . $con->connect_error);
+                        }
+
+                        $sql = "INSERT INTO ObiektSportowy(nazwa, adres, rodzajObiektu, godzinyOtwarcia, obrazek)
+                        VALUES ('$object_name', '$object_address', $object_type, '$object_hours', '$_object_image');";
+
+                        if($con->query($sql) === TRUE) {
+                            
+                        }  else {
+                            echo "Insert query error" . $con->error;
+                        }
+
+                        $con->close();
+                    
+                    }
+
+                ?>
+            </div>
         </main>
         <footer>
             <p>&copy 67899076889</p>
