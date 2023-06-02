@@ -20,7 +20,7 @@ nav > ul > li > a {
     text-decoration: none;
 }
 
-main {
+.main {
     display: flex;
     padding: 20px;
 }
@@ -28,7 +28,8 @@ main {
 .main-left,
 .main-middle,
 .main-right {
-    flex-basis: (33.33% - 20px);
+    flex-basis: calc(33.33% - 20px);
+    display: inline-block;
     background-color: #eee;
     height: auto;
     margin-bottom: 20px;
@@ -41,6 +42,32 @@ main {
 
 .main-right {
     margin-left: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: 0;
+    font-style: italic;
+}
+
+a {
+    font-size: 1.2rem;
+    color: #315659;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 1.5rem;
+    background-color: #f2f2f2;
+    border-radius: 5px;
 }
 
 footer {

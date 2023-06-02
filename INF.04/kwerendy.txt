@@ -1,21 +1,31 @@
+Kwerenda 1
 SELECT id, nazwa FROM RodzajObiektu;
 
+Kwerenda 2
 SELECT id, nazwa FROM RodzajObiektu
 WHERE id = 2;
 
+Kwerenda 3
 SELECT id, nazwa FROM ObiektSportowy;
 
+Kwerenda 4
 SELECT os.id, os.nazwa, os.adres, os.godzinyOtwarcia, os.obrazek, ro.nazwa AS obiekt FROM ObiektSportowy AS os
 INNER JOIN RodzajObiektu AS ro ON ro.id = os.rodzajObiektu
 WHERE os.id = 3;
 
+Kwerenda 5
 INSERT INTO ObiektSportowy(nazwa, adres, rodzajObiektu, godzinyOtwarcia, obrazek)
 VALUES ('Vizja Park', 'ul. Okopowa 59, 01-043 Warszawa', 4, '07:00-22:30', 'default.jpeg');
 
+Kwerenda 6
 SELECT os.nazwa, r.czasRozpoczecia, r.czasZakonczenia, r.obiektSportowy, u.email FROM ObiektSportowy AS os
 INNER JOIN Rezerwacja AS r ON r.obiektSportowy = os.id
 INNER JOIN Uzytkownik AS u ON u.id = r.uzytkownik
 WHERE r.czyPotwierdzona = 1;
 
-ALTER TABLE Rezerwacja
-ADD COLUMN czyPotwierdzona BOOLEAN NOT NULL DEFAULT 1;
+Kwerenda 7
+ALTER TABLE rezerwacja
+ADD COLUMN czyPotwierdzona BOOLEAN DEFAULT false;
+
+UPDATE rezerwacja
+SET czyPotwierdzona = true;
