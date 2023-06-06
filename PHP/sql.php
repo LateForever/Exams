@@ -15,3 +15,30 @@
 
     $con->close();
 ?>
+
+<?php
+
+    $con = new mysqli("localhost", "root", "", "baza");
+
+    if ($con->connect_error) {
+        die("Databse connect error" . $con->connect_error);
+    }
+
+    $sql = "SELECT * FROM OSOBA";
+
+    $res = $con->query($sql);
+
+    if($res->num_rows > 0) {
+        while($row = $res->fetch_assoc()) {
+
+            $name = $row["name"];
+            $age = $row["age"];
+
+            echo"Użytkownik o imieniu $name ma $age lat";
+
+        }
+    }
+
+    $con->close();
+
+?>
