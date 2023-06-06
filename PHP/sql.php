@@ -42,3 +42,27 @@
     $con->close();
 
 ?>
+
+<?php
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $name = $_POST["name"];
+        $surname = $_POST["surname"];
+        $age = $_POST["age"];
+        $hobby = $_POST["hobby"];
+
+        $con = new mysqli("loaclhost", "root", "", "baza");
+
+        if($con->connect_error) {
+            die("Connect error" . $con->connect_error);
+        }
+
+        $sql = "INSERT INTO OSOBA(name, surname, age, hobby) VALUES ('$name', '$surname', $age, '$hobby')";
+
+        if( $con->query($sql) === FALSE) {
+            echo"insert query error" . $con->error;
+        }
+
+        $con->close();
+    }    
+?>
