@@ -68,7 +68,6 @@
 ?>
 
 <?php 
-
     // @Check if parameter 
     if(isset($_GET["id"])) {
 
@@ -107,6 +106,31 @@
                 </ul>";
 
             }
+        }
+
+        $con->close();
+    }
+?>
+
+<?php
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $id = $_POST["id"];
+        $color = $_POST["color"];
+        $wheels = $_POST["wheels"];
+        $production_year = $_POST["production_year"];
+
+        $con = new mysqli("localhost", "root", "", "baza");
+
+        if($con->connect_error) {
+            die("Database connection error" . $con->connect_error);
+        }
+
+        $sql = "INSERT INTO CARS(id, color, wheels, production_year) VALUES ($id, '$color', '$wheels', '$production_year')";
+
+        if($con->query($sql) === FALSE) {
+            echo"Database insert sql error $con->error";
         }
 
         $con->close();
