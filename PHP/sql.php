@@ -137,3 +137,44 @@
     }
 
 ?>
+
+<?php
+
+    $con = new mysqli("localhost", "root", "", "baza");
+
+    if($con->connect_error) {
+        die("Database connect error" . $con->connect_error);
+    }
+
+    $sql = "SELECT * FROM CARS WHERE color = 'red' AND wheels = 4";
+
+    $res = $con->query($sql);
+
+    if($res->num_rows > 0) {
+        while($row = $res->fetch_assoc()) {
+
+            $id = $row["id"];
+            $name = $row["name"];
+            $dealer = $row["dealer"];
+            $color = $row["color"];
+
+            echo"<ul>
+            <li>
+                <p>$id</p>
+            </li>
+            <li>
+                <p>$name</p>
+            </li>
+            <li>
+                <p>$dealer</p>
+            </li>
+            <li>
+                <p>$color</p>
+            </li>
+            </ul>";
+
+        }
+    }
+
+    $con->close();
+?>
