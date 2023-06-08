@@ -66,3 +66,50 @@
         $con->close();
     }    
 ?>
+
+<?php 
+
+    // @Check if parameter 
+    if(isset($_GET["id"])) {
+
+        $id = $_GET["id"];
+
+        $con  = new mysqli("localhost", "root", "", "baza");
+
+        if ($con->connect_error) {
+            die("Database coonection error" . $con->connect_error);
+        }
+
+        $sql = "SELECT * FROM OSOBA WHERE id = $id";
+        $res = $con->query($sql);
+
+        if($res->num_rows > 0) {
+            while($row = $res->fetch_assoc()) {
+
+                $id = $row["id"];
+                $name = $row["name"];
+                $surname = $row["surname"];
+                $age = $row["age"];
+
+                echo"<ul>
+                <li>
+                    <p>User id: $id</p>
+                </li>
+                <li>
+                    <p>Name is: $name</p>
+                </li>
+                <li>
+                    <p>Surname is: $surname</p>
+                </li>
+                <li>
+                    <p>Age is: $age</p>
+                </li>
+                </ul>";
+
+            }
+        }
+
+        $con->close();
+    }
+
+?>
