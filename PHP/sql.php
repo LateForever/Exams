@@ -223,3 +223,28 @@
     }
 
 ?>
+
+<?php
+    $con = new mysqli("localhost", "root", "", "baza");
+
+    if($con->connect_error) {
+        die("Database connection error" . $con->connect_error);
+    }
+
+    $id = 10;
+
+    $sql = "SELECT * FROM PEOPLE WHERE id = $id";
+
+    $res = $con->query($sql);
+    if($res->num_rows > 0) {
+        while($row = $res->fetch_assoc()) {
+            $id = $row["id"];
+            $name = $row["name"];
+            $image = $row["image"];
+
+            echo"<h2>$name</h2><h3>$id</h3><img src='./images/src/$image'/>";
+        }
+    }
+
+    $con->close();
+?>
