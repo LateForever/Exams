@@ -178,3 +178,48 @@
 
     $con->close();
 ?>
+
+<?php
+
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $name = $_POST["name"];
+        $surname = $_POST["surname"];
+        $age = $_POST["age"];
+
+        $con = new mysqli("localhost", "root", "", "database");
+
+        if($con->connect_error) {
+            die("Database connection error" . $con->connect_error);
+        }
+
+        $sql = "INSERT INTO PEOPLE(name, surname, age) VALUES ('$anme' , '$surname' , $age)";
+
+        $res = $con->query($sql);
+
+        if($res->num_rows > 0) {
+            while($row = $res->fetch_assoc()) {
+
+                $name = $row["name"];
+                $surname = $row["surname"];
+                $age = $row["age"];
+
+                echo"<ol>
+                <li>
+                    <p>$name</p>
+                </li>
+                <li>
+                    <p>$surname</p>
+                </li>
+                <li>
+                    <p>$age</p>
+                </li>
+                </ol>";
+
+            }
+        }
+
+        $con->close();
+    }
+
+?>
