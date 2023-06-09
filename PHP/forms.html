@@ -6,7 +6,7 @@
         <title>Page Title</title>
     </head>
     <body>
-        <form method="post">
+        <form method="post" onsubmit="handleData(event)">
             <label for="name">imie: </label>
             <input type="text" placeholder="Wpisz swoje imie" id="name" name="name" required />
             <label for="surname">Nazwisko: </label>
@@ -14,5 +14,9 @@
             <button type="reset">Zresetuj dane</button>
             <button type="submit">Wyślij dane</button>
         </form>
+        <scritp>
+            function handleData(event) { event.preventDefault(); const name = document.getElementById(name).value; const surname =
+            document.getElementById(surname).value; }
+        </scritp>
     </body>
 </html>
